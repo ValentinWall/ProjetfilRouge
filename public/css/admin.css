@@ -1,0 +1,27 @@
+
+header{
+    background-color: orange;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+}
+
+.btnHeader{height: 45%;}
+#containerSvgHeader{margin-right: 5%;}
+
+
+main {
+    padding-top: 30px;
+    min-height: calc(80vh - 40px);
+}
+
+
+    nav ul li a:hover > i {
+        color: black;
+    }
+
+/* **************************************** FOOTER **************************************** */
+
+footer p {
+    font-size: 0.75em;
+}

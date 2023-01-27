@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription à {{ contact_company }}{% endblock %}
+
+{% block body %}
+
+    {% include '_header.html.twig' %}
+
+    <div class="container">
+
+        <div class="row my-5">
+            <div class="col-12 text-center">
+                <h1>Inscription</h1>
+            </div>
+        </div>
+
+        <form method="post">
+
+                {{ form_start(registrationForm) }}
+
+                <div class="row mb-3">
+                    <div class="col-3 offset-3">
+                        {{ form_row(registrationForm.firstName, {
+                            'label': 'Prénom'
+                        }) }}
+                    </div>
+                    <div class="col-3">
+                        {{ form_row(registrationForm.lastName, {
+                            'label': 'Nom'
+                        }) }}
+                    </div>
+                </div>
+                    
+                <div class="row mb-3">
+                    <div class="col-3 offset-3">
+                        {{ form_row(registrationForm.email) }}
+                    </div>
+                    <div class="col-3">
+                        {{ form_row(registrationForm.phone, {
+                            'label': 'Téléphone'
+                        }) }}
+                    </div>
+                </div>
+                    
+                <div class="row mb-3">
+                    <div class="col-3 offset-3">
+                        {{ form_row(registrationForm.plainPassword.first, {
+                            label: 'Mot de passe'
+                        }) }}
+                    </div>
+                    <div class="col-3">
+                        {{ form_row(registrationForm.plainPassword.second, {
+                            label: 'Confirmation mot de passe'
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-6 offset-3">
+                        {{ form_row(registrationForm.agreeTerms, {
+                            label: 'j\'accepte les CGU'
+                        }) }}
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-6 offset-3 mb-5 text-end">
+                        <button type="submit" class="btn btn-success">Inscription</button>
+                    </div>
+                </div>
+
+            {{ form_end(registrationForm) }}
+
+        </form>
+
+        <div class="row text-center mb-5">
+            <hr class="col-6 offset-3">
+            <div class="col-12">
+                <p>Déjà inscrit ? <a href="{{ path('app_login') }}">Connectez-vous !</a></p>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

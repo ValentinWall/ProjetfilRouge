@@ -1,0 +1,62 @@
+
+<header class="navbar-nav navbar-expand-lg">
+    <nav class="container-fluid ">
+        <div class="row align-items-center">
+
+            <div class="col col-lg-1 nav-item">
+                <i class="fa-solid fa-bars fa-4x"></i>
+            </div>
+
+            <div class="col col-sm-3 col-md-5 col-lg-6 nav-item text-white">
+                <a href="{{ path('/accueil') }}"><h1>Facile'eat la vie</h1></a>
+            </div>
+
+            <div class="col  col-lg-5 d-flex justify-content-end " id="containerBtnHeader">
+                <div class="text-center d-flex flex-column justify-content-center pt-4" id="containerSvgHeader">
+                    <a href="{{ path('/panier') }}"><i class="fas fa-shopping-cart fa-3x"></i></a>
+                    <p>Panier</p>
+                </div>
+                <div class="col  col-lg-5 d-flex justify-content-end align-items-center text-center">
+                    <a href="{{ path('app_register')}}" class="btn btn-lg bg-dark text-white mx-2 btnHeader">Inscription</a>
+                    <a href="{{ path('app_login') }}" class="btn btn-lg  bg-white text-dark mx-2 btnHeader">Connexion</a>
+                </div>
+            </div>
+        </div>
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <div class="row">
+            <div class="col-1">
+            <a title="Admin" class="btn btn-light btn-outline-dark"
+                href="{{ path('admin') }}">
+                <i class="bi bi-bandaid-fill"></i>
+            </a>
+        </div>
+        <div class="col-1">
+            <i class="bi bi-x-square-fill"></i>
+        </div>
+        </div>
+        {% endif %}
+    </nav>
+</header>
+
+<div class="burger " id="burger">
+    <div class="container">
+        <div class="row orange">
+            <div class="col ">
+                <h1 class="ml-3">Menu</h1>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <i class="fas fa-times fa-3x"></i>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row flex-column align-items-end">
+                <a class="orange h4 mt-3" href="{{ path('/apropos') }}">A propos</a>
+                <a class="orange h4 mt-3" href="{{ path('/accueil') }}">Accueil</a>
+                <a class="orange h4 mt-3" href="{{ path('/connexion') }}">Connexion</a>
+                <a class="orange h4 mt-3" href="{{ path('/livraison') }}">Livraison</a>
+                <a class="orange h4 mt-3" href="{{ path('contact') }}">Messagerie</a>
+                <a class="orange h4 mt-3" href="{{ path('/panier') }}">Panier</a>
+            </div>
+        </div>
+    </div>
+</div>

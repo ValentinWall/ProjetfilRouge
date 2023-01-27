@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    404
+{% endblock %}
+
+{% block body %}
+    {% include "_header.html.twig" %}
+    <main>
+        <div class="container-fluid mt-5">
+            <div class="row justify-content-center">
+                <h1 class="text-center">Livraisons</h1>
+            </div>
+            <div class="row mt-5">
+                <table class="table table-bordered w-100">
+                    <thead class="bg-dark text-white">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Adresse de livraison</th>
+                        <th>Date</th>
+                        <th>Informations utiles</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>d</td>
+                        <td>d</td>
+                        <td>d</td>
+                        <td>d</td>
+                        <td>d</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <div class="col-11">
+                <input type="text" class="form-control" placeholder="Insérez un lien">
+            </div>
+            <div class="col-1">
+                <button class="btn btn-dark text-light btn-block">Envoyer</button>
+            </div>
+        </div>
+
+
+        <div class="row mt-3 justify-content-center">
+            <div class="col-12 text-center">
+                <button class="btn btn-dark text-light btn-block">Livré</button>
+                <button class="btn btn-dark text-light btn-block">Appeler client</button>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}

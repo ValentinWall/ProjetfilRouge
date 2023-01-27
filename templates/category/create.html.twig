@@ -1,0 +1,28 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %} Nouvelle catégorie {% endblock %}
+
+{% block body %}
+
+<h1 class="mb-5 text-center"> Créer une catégorie de produit </h1>
+
+{{ form_start(categoryForm) }}
+
+<div class="row">
+    <div class="col-8 offset-2">
+        {{ form_row(categoryForm.name) }}
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-8 offset-2 my-3 text-end">
+        <a href="{{ path('admin_category') }}" class="btn btn-outline-danger me-3">Annuler</a>
+        <button class="btn btn-success">Créer</button>
+    </div>
+</div>
+
+{{ form_end(categoryForm) }}
+
+
+{% endblock %}

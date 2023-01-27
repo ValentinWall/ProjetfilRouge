@@ -1,0 +1,42 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %} Produits {% endblock %}
+
+{% block body %}
+
+<h1 class="text-center my-5"> Liste des produits </h1>
+
+<div>
+    <table class="table table-hover text-center align-middle">
+        <thead>
+            <tr>
+                <th> </th>
+                <th> Nom des Produits</th>
+                <th> Prix </th>
+                <th> Stock </th>
+                <th> Nom des catégories</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr> 
+                <td class="container w-25 h-25"> <img src="{{ asset('img/product/' ~ product.img) }}" alt="{{ product.alt }}" class="p-3 img-thumbnail"> </td>
+                <td> {{ product.name }} </td>
+                <td> {{ product.price|number_format(2, ',', ' ') }} € </td>
+                <td> {{ product.stock }} article(s) restants</td>
+                <td> {{ product.category.name }}</td>
+                <td> <a href="{{ path('product_delete', {'id':product.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')" class=""><i class="bi bi-trash text-danger h-100"></i> </a> </td>
+            </tr>
+            {% else %}
+                <tr class="text-center">
+                    <td colspan="4">Aucun produits trouvées</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-end">
+    <a href="{{ path('product_create')}}" title="Créer un produit" class="btn btn-success"> Créer </a>
+    </div>
+</div>
+
+{% endblock %}

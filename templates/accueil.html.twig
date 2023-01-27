@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block body %}
+{% include "_header.html.twig" %}
+<main>
+    <div class="container-fluid">
+    <!--Header card-->
+        <div class="mt-5 row">
+            <h1 class="text-center">Accueil</h1>
+        </div>
+        <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for category in categories %}
+        <div class="col">
+            <div class="card">
+                <h3 class="text-center"> {{ category.name }} </h3>
+            {% for product in category.product %}
+                <div class="card-body border border-dark">
+                    
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="{{ asset('img/product/' ~ product.img) }}" class="text-center w-100" alt="{{ product.alt }}">
+                        </div>
+                        <h5 class="card-title col-3 text-center fs-5">{{ product.name }}</h5>
+                        <p class="card-text col-3 text-end"> 
+                            {{ product.price|number_format(2, ',', ' ') }} €
+                            {% if product.stock != 0 %}
+                            <span class="fs-4 text-success">En stock</span>
+                            {% else %}
+                            <span class="fs-4 text-danger">Rupture de stock</span>
+                            {% endif %}
+                        </p>
+                        <a href="#" class="col-3 text-end"><i class="bi bi-plus-lg bg-success rounded"></i></a>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p> Nombre d'articles </p>
+                        </div>
+                        <div class="col-6">
+                            <p>  </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    
+</main>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    connexion
+{% endblock %}
+
+{% block body %}
+    {% include "_header.html.twig" %}
+    <main>
+        <div class="container mt-5">
+            <div class="mt-5 row">
+                <h1 class="text-center">Connexion</h1>
+            </div>
+            <div class="row">
+                <form class="mt-5 container p-4 " id="formConnexion">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput"><b>Email</b></label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ecrire ici votre adresse email">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="formGroupExampleInput2"><b>Mot de passe du site</b></label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Votre mot de passe pour ce site">
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <input type="submit" class="btn btn-dark" value="Connexion" name="connexion">
+                        </div>
+                        <div class="col">
+                            <input type="submit" class="btn btn-dark" value="Inscription" name="inscription">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="submit" class="btn btn-light" value="Mot de passe oublié" name="oubliee">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

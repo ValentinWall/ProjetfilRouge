@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    404
+{% endblock %}
+
+{% block body %}
+    {% include "_header.html.twig" %}
+    <main>
+    <div class="container-fluid py-5">
+        <h1 class="text-center mb-5">A propos</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset('img/ex.jpg') }}" class="card-img-top" alt="Image exemple">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Valentin</h5>
+                        <p class="card-text text-center">Valentin est un pro de Bootstrap. Avec lui, vous pouvez être sûr que votre site Web sera beau et bien organisé !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset('img/ex.jpg') }}" class="card-img-top" alt="Image exemple">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Maxime</h5>
+                        <p class="card-text text-center">Maxime est un maître du HTML et du CSS. Si vous avez besoin de quelque chose de joli et de bien structuré, il est votre homme.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset('img/ex.jpg') }}" class="card-img-top" alt="Image exemple">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Evan</h5>
+                        <p class="card-text text-center">Evan est obsédé par le JavaScript. Il peut passer des heures à bidouiller du code pour créer des choses incroyables</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center py-5  bg-dark text-white">
+            <div class="col-md-8">
+                <p>Le projet Facile ' eat la vie, consiste en un site web qui permet aux personnes âgées de commander et de recevoir de la nourriture de manière simple et épurée. Les utilisateurs pourront commander de la nourriture en ligne et la recevoir à leur domicile ou dans un point de relais proche de chez eux. Le site web a été conçu pour être facile à utiliser et à comprendre, afin de rendre l'expérience de commande de nourriture aussi agréable et pratique que possible pour les personnes âgées.</p>
+            </div>
+        </div>
+    </div>
+    </main>
+{% endblock %}

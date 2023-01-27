@@ -1,0 +1,79 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    404
+{% endblock %}
+
+{% block body %}
+    {% include "_header.html.twig" %}
+    <main>
+
+        <section class="container-fluid mt-5 text-center">
+            <div class="row mt-5">
+                <h1>Messagerie</h1>
+            </div>
+            <form class="container-fluid mt-5" style="background-color: #FFE6C1">
+                <div class="row">
+                    <h1>Nouveaux messages</h1>
+                </div>
+                <div class="row mt-3 bg-dark">
+                    <div class="col-10" style="position: relative">
+                        <div class="row text-white pt-3">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiores repudiandae rerum.</p>
+                        </div>
+                        <div id="MessageText" class="row" style="position: absolute; bottom: 0;">
+                            <textarea class="form-control" placeholder="Réponse"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-2 orange">
+                        <div class="row mt-2"><p>5 mars 2021></div>
+                        <div class="row"><p>Justin Ortigni</p></div>
+                        <div class="row"><p>tata@gmail.com</p></div>
+                        <div class="row colum">
+                            <input type="submit" class="btn btn btn-light mt-3" value="Archiver">
+                            <input type="submit" class="btn btn-light mt-3" value="Supprimer">
+                            <input type="submit" class="btn btn-light mt-3" value="Répondre">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+<br><br><br><hr><br>
+        <section class="container-fluid mb-5 mt-5 text-center">
+            <div class="row">
+                <div class="col-2">
+                    <button class="btn btn-light">Date par ordre croissant</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-light">Date par ordre décroissant</button>
+                </div>
+            </div>
+            <form class="container-fluid mt-5" style="background-color: #FFE6C1">
+                <div class="row">
+                    <h1>Archives</h1>
+                </div>
+                <div class="row mt-3 bg-dark">
+                    <div class="col-10" style="position: relative">
+                        <div class="row text-white pt-3">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiorrem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus enim eos maiores repudiandae rerum.</p>
+                        </div>
+                        <div id="MessageText" class="row" style="position: absolute; bottom: 0;">
+                            <textarea class="form-control" placeholder="Réponse"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-2 orange">
+                        <div class="row mt-2"><p>5 mars 2021></div>
+                        <div class="row"><p>Justin Ortigni</p></div>
+                        <div class="row"><p>tata@gmail.com</p></div>
+                        <div class="row colum">
+                            <input type="submit" class="btn btn-light mt-3" value="Supprimer">
+                            <input type="submit" class="btn btn-light mt-3" value="Répondre">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock %}

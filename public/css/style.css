@@ -1,0 +1,94 @@
+body{
+    background-color: #F5F0E4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+/*header*/
+header{
+    background-color: orange;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+}
+main{
+    margin-top: 15vh;
+}
+.btnHeader{height: 45%;}
+#containerSvgHeader{margin-right: 5%;}
+
+.burger{
+    background-color: #FFE6C1;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 99;
+    top: 125px;
+    display: none;
+}
+.contentBurger{background-color: #FFE6C1;}
+/************/
+
+/*style i, a */
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: white;
+    transition: .5s;
+}
+
+i:hover{
+    cursor: pointer;
+    color: white;
+    transition: .5s;
+}
+/****************/
+
+/*couleur pour build le style*/
+.red{background-color: red;}
+.yellow{background-color: yellow;}
+.blue{background-color: #5eb5e0;}
+.orange{background: orange;}
+/********************/
+
+/*Cards accueil */
+.AccueilSizeImg{
+    width: 100%;
+    height: 100%;
+}
+
+.cat1{background-color: #13DB3F;}
+.cart1body{background-color: #95E89E;}
+.btnCart1 {background-color: #13DB3F;}
+.cat2{background-color: #00A3FF;}
+.cart2body{background-color: #8BCCEC;}
+.btnCart2{background-color: #00A3FF;}
+.cat3{background-color: #FF5166;}
+.cart3body{background-color: #F9ADAF;}
+.btnCart3{background-color: #FF5166;}
+/**************/
+
+/*ConnexionController form*/
+#formConnexion{
+    background-color: #FFE6C1;
+    width: 35%;
+    border-radius: 20px;
+}
+/*404*/
+
+#img404{
+    width: 50%;
+    height: 100%;
+}
+/*MessagerieController*/
+#MessageText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: red;
+}

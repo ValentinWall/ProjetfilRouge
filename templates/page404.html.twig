@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    404
+{% endblock %}
+
+{% block body %}
+    {% include "/_header.html.twig" %}
+    <main>
+
+        <div class="container mt-5">
+            <div class="row text-center">
+                <h1><b>404</b></h1>
+                <p>La page demandée à l'URL {{ catchAll }} n'a pas été trouvée.</p>
+
+            </div>
+        </div>
+
+        <div class="row mt-5 ">
+
+            <div class="col-6  text-center">
+                <img id="img404" src="{{ asset('img/ex.jpg') }}" alt="exemple">
+            </div>
+
+            <div class="col-6">
+
+                <div class="row mb-5">
+                    <h2>Cette page n’exsite pas</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h2>Revenir à l'accueil</h2>
+                    </div>
+                    <div class="col">
+                        <a href="{{ path('/accueil') }}" class="btn btn-dark">Accueil</a>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col">
+                        <h2>Revenir sur google</h2>
+                    </div>
+                    <div class="col">
+                        <a href="https://www.google.fr/" class="btn btn-dark">Google</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+{% endblock %}
