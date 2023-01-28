@@ -23,23 +23,26 @@
                         <div class="col-3">
                             <img src="{{ asset('img/product/' ~ product.img) }}" class="text-center w-100" alt="{{ product.alt }}">
                         </div>
-                        <h5 class="card-title col-3 text-center fs-5">{{ product.name }}</h5>
-                        <p class="card-text col-3 text-end"> 
-                            {{ product.price|number_format(2, ',', ' ') }} €
-                            {% if product.stock != 0 %}
-                            <span class="fs-4 text-success">En stock</span>
-                            {% else %}
-                            <span class="fs-4 text-danger">Rupture de stock</span>
-                            {% endif %}
-                        </p>
-                        <a href="#" class="col-3 text-end"><i class="bi bi-plus-lg bg-success rounded"></i></a>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <p> Nombre d'articles </p>
+                        <h5 class="card-title col-3 text-center fs-5 text-uppercase">{{ product.name }}</h5>
+                        <div class="col-6">    
+                            <p class="card-text text-end"> 
+                                {{ product.price|number_format(2, ',', ' ') }} €
+                                <br>
+                                {% if product.stock != 0 %}
+                                <span class="fs-4 text-success">En stock</span>
+                                {% else %}
+                                <span class="fs-4 text-danger">Rupture de stock</span>
+                                {% endif %}
+                            </p>
                         </div>
-                        <div class="col-6">
-                            <p>  </p>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-8">
+                            <p class="fw-bold"> Nombre d'articles : {{ product.stock }} restant(s)</p>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" class="col-3 text-end"><i class="bi bi-plus-lg bg-success rounded"></i></a>
                         </div>
                     </div>
                 </div>
