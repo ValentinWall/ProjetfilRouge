@@ -14,8 +14,10 @@
             <div class="col  col-lg-5 d-flex justify-content-end" id="containerBtnHeader">
                 <div class="text-center d-flex flex-row justify-content-center pt-4 logo">
                     <div class="text-center d-flex flex-column justify-content-center pt-4" id="containerSvgHeader">
+                        {% if not is_granted('ROLE_SUPER_ADMIN') %}
                         <a href="{{ path('cart') }}"><i class="fas fa-shopping-cart fa-3x"></i></a>
                         <p>Panier</p>
+                        {% endif %}
                     </div>
                     
                 </div>
