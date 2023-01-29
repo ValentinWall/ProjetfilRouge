@@ -31,6 +31,7 @@ class ContactType extends AbstractType
         ->add('company', TextType::class, [
             'required' => false,
             'attr' => [
+                'placeholder' => 'Facultatif',
                 'maxlength' => 100
             ]
         ])

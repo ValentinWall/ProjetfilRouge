@@ -22,6 +22,20 @@
 {#        {% endblock %}#}
     </head>
     <body>
+        {% include '_header.html.twig' %}
         {% block body %}{% endblock %}
+            <div class="row p-5">
+            {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="flash-{{ label }} bg-{{ label }} text-light rounded mb-5 p-3">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        
     </body>
+    <footer class="container-fluid orange text-dark p-3 text-center pb-1">
+            <p>Copyright &copy; {{ "now"|date("Y") }} - Valentin WALLAERT </p>
+        </footer>
 </html>

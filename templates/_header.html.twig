@@ -14,7 +14,7 @@
             <div class="col  col-lg-5 d-flex justify-content-end" id="containerBtnHeader">
                 <div class="text-center d-flex flex-row justify-content-center pt-4 logo">
                     <div class="text-center d-flex flex-column justify-content-center pt-4" id="containerSvgHeader">
-                        <a href="{{ path('/panier') }}"><i class="fas fa-shopping-cart fa-3x"></i></a>
+                        <a href="{{ path('cart') }}"><i class="fas fa-shopping-cart fa-3x"></i></a>
                         <p>Panier</p>
                     </div>
                     
@@ -77,10 +77,10 @@
         <div class="container mt-5">
             <div class="row flex-column align-items-end">
                 <a class="h4 mt-3 text-center burger-item" href="{{ path('/accueil') }}">Accueil</a>
-                <a class="h4 mt-3 text-center burger-item" href="{{ path('/connexion') }}">Connexion</a>
+                <a class="h4 mt-3 text-center burger-item" href="{{ path('app_login') }}">Connexion</a>
                 <a class="h4 mt-3 text-center burger-item" href="{{ path('/livraison') }}">Livraison</a>
                 <a class="h4 mt-3 text-center burger-item" href="{{ path('contact') }}">Messagerie</a>
-                <a class="h4 mt-3 text-center burger-item" href="{{ path('/panier') }}">Panier</a>
+                <a class="h4 mt-3 text-center burger-item" href="{{ path('cart') }}">Panier</a>
                 <a class="h4 mt-3 text-center burger-item" href="{{ path('/apropos') }}">À propos</a>
             </div>
         </div>

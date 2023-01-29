@@ -3,7 +3,6 @@
 {% block title %} Accueil {% endblock %}
 
 {% block body %}
-{% include "_header.html.twig" %}
 <main>
     <div class="container-fluid">
     <!--Header card-->
@@ -27,25 +26,26 @@
                             <img src="{{ asset('img/product/' ~ product.img) }}" class="text-center w-100" alt="{{ product.alt }}">
                         </div>
                         <h5 class="card-title col-7 text-center fs-5 text-uppercase">{{ product.name }}</h5>
-                        <div class="col-2">    
-                            <p class="card-text text-end"> 
+                        <div class="col-9">    
+                            <p class="card-text text-end text-underline"> 
                                 {{ product.price|number_format(2, ',', ' ') }} €
-                                <br>
+                            </p>
+                            <p class="card-text">
                                 {% if product.stock != 0 %}
-                                <span class="fs-4 text-success">En stock</span>
+                                <span class="fs-5 text-success">En stock</span>
                                 {% else %}
-                                <span class="fs-4 text-danger">Rupture de stock</span>
+                                <span class="fs-5 text-danger">Rupture de stock</span>
                                 {% endif %}
                             </p>
                         </div>
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-7">
                             <p class="fw-bold"> Nombre d'articles : <br> {{ product.stock }} restant(s)</p>
                         </div>
-                        <div class="col-4">
-                            <a href="{{ path('cart_add', {'id': product.id} ) }}" class="btn btn-{{ product.stock > 0 ? 'success' : 'danger disabled' }}"><i class="bi bi-plus-lg bg-success rounded"></i></a>
+                        <div class="col-5 text-end">
+                            <a href="{{ path('cart_add', {'id': product.id} ) }}" class="col-5 btn bg-black text-white btn-sm btn-{{ product.stock > 0 ? 'success' : 'danger disabled' }}">Ajouter</a>
                         </div>
                     </div>
                 </div>

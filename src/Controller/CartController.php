@@ -16,7 +16,8 @@ class CartController extends AbstractController
     public function index(CartService $cartService): Response
     {
         return $this->render('cart/index.html.twig', [
-            'cart' => $cartService->getCart()
+            'cart' => $cartService->getCart(),
+            'total' => $cartService->getTotal()
         ]);
     }
 
@@ -31,11 +32,27 @@ class CartController extends AbstractController
         return $this->redirectToRoute('/accueil');
     }
 
+    #[Route('/remove/{id}', name: 'cart_remove')]
+    public function remove(Cartservice $cartService, int $id): Response
+    {
+        $cartService->remove($id);
+        $this->addFlash('success', 'Le produit a bien été retiré du panier');
+        return $this->redirectToRoute('cart');
+    }
+
     #[Route('/clear', name: 'cart_clear')]
     public function clear(CartService $cartService): Response
     {
         $cartService->clear();
         $this->addFlash('success', 'Le panier à été vidé');
+        return $this->redirectToRoute('cart');
+    }
+
+    #[Route('/delete/{id}', name: 'cart_delete')]
+    public function delete(CartService $cartService, int $id) : Response
+    {
+        $cartService->delete($id);
+        $this->addFlash('success', 'Le produit a bien été supprimé du panier');
         return $this->redirectToRoute('cart');
     }
 }
