@@ -42,7 +42,7 @@
                             <p class="fw-bold"> Nombre d'articles : {{ product.stock }} restant(s)</p>
                         </div>
                         <div class="col-4">
-                            <a href=""><i class="bi bi-plus-lg bg-success rounded"></i></a>
+                            <a href="{{ path('cart_add', {'id': product.id} ) }}" class="btn btn-{{ product.stock > 0 ? 'success' : 'danger disabled' }}"><i class="bi bi-plus-lg bg-success rounded"></i></a>
                         </div>
                     </div>
                 </div>
