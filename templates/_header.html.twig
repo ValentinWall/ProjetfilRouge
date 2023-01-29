@@ -10,13 +10,14 @@
             <div class="col col-sm-3 col-md-5 col-lg-6 nav-item text-white">
                 <a href="{{ path('/accueil') }}"><h1>Facile'eat la vie</h1></a>
             </div>
-
+            
             <div class="col  col-lg-5 d-flex justify-content-end" id="containerBtnHeader">
                 <div class="text-center d-flex flex-row justify-content-center pt-4 logo">
                     <div class="text-center d-flex flex-column justify-content-center pt-4" id="containerSvgHeader">
                         <a href="{{ path('/panier') }}"><i class="fas fa-shopping-cart fa-3x"></i></a>
                         <p>Panier</p>
                     </div>
+                    
                 </div>
 
                     {% if is_granted('ROLE_SUPER_ADMIN') %}
