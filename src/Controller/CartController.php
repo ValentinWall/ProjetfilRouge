@@ -2,16 +2,21 @@
 
 namespace App\Controller;
 
+use Stripe\Stripe;
+use App\Entity\Panier;
 use App\Service\CartService;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Stripe\Checkout\Session;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 #[Route('/cart')]
 
 class CartController extends AbstractController
 {
+    
     #[Route('/', name: 'cart')]
     public function index(CartService $cartService): Response
     {

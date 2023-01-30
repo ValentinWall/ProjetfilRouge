@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use App\Repository\ProductRepository;
+use App\Services\StripeService;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class CartService

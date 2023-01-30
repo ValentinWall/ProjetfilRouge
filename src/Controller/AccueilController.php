@@ -21,4 +21,11 @@ class AccueilController extends AbstractController
             'categories' => $categoryRepository->findAll()
         ]);
     }
+
+    #[Route('/Mentions', name:'mentions')]
+
+    public function mention(): Response
+    {
+        return $this->render('Mentions.html.twig');
+    }
 }

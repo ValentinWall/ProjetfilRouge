@@ -22,7 +22,8 @@ class UserType extends AbstractType
             ->add('email', EmailType::class, [
                 'attr' => [
                     'maxLength' => 100
-                ]
+                ],
+                'help' => 'Maximum 100 caractères'
             ])
             ->add('roles', ChoiceType::class, [
                 'required' => false,
@@ -33,7 +34,7 @@ class UserType extends AbstractType
                     'super administrateur' => 'ROLE_SUPER_ADMIN'
                 ]
             ])
-            ->add('password', RepeatedType::class, [
+            ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Les deux mots de passe ne correspondent pas',
                 'mapped' => false,

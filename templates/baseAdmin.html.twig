@@ -57,7 +57,7 @@
                             <li class="py-2"><a href="{{ path('admin_product') }}" title="Produits"> <i class="bi bi-dice-4 fs-4"></i></a></li>
                             <li class="py-2"><a href="{{ path('admin_category') }}" title="catégories"> <i class="bi bi-tags fs-4"></i></a></li>
                             {% if is_granted('ROLE_SUPER_ADMIN') %}
-                                <li class="py-2"><a href="#" title="utilisateurs"> <i class="bi bi-people fs-4"></i></a></li>
+                                <li class="py-2"><a href="{{ path('admin_users') }}" title="utilisateurs"> <i class="bi bi-people fs-4"></i></a></li>
                             {% endif %}
                             <li class="py-2"><a href="#" title="transporteurs"> <i class="bi bi-truck fs-4"></i></a></li>
                             <li class="py-2"><a href="#"  title="commandes"> <i class="bi bi-receipt fs-4"></i></a></li>

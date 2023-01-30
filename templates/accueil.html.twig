@@ -5,56 +5,64 @@
 {% block body %}
 <main>
     <div class="container-fluid">
-    <!--Header card-->
+        <!--Header card-->
         <div class="mt-5 row">
             <h1 class="text-center">Accueil</h1>
         </div>
         <br>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for category in categories %}
-        <div class="col">
-            <div class="card">
-                <div class="category-name">                
-                    <h3 class="text-center "> {{ category.name }} </h3>
-                </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for category in categories %}
+            <div class="col">
+                {% if loop.index == 1 %}
+                <div class="card bg-primary bg-opacity-50">
+                    {% elseif loop.index == 2 %}
+                    <div class="card bg-warning bg-opacity-50">
+                    {% elseif loop.index == 3 %}
+                    <div class="card bg-danger bg-opacity-50">
+                        {% endif %}
+                        <div class="category-name">
+                            <h3 class="text-center "> {{ category.name }} </h3>
+                        </div>
 
-            {% for product in category.product %}
-                <div class="card-body">
-                    
-                    <div class="row">
-                        <div class="col-3 img-product">
-                            <img src="{{ asset('img/product/' ~ product.img) }}" class="text-center w-100" alt="{{ product.alt }}">
+                        {% for product in category.product %}
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-3 img-product">
+                                    <img src="{{ asset('img/product/' ~ product.img) }}" class="text-center w-100"
+                                        alt="{{ product.alt }}">
+                                </div>
+                                <h5 class="card-title col-7 text-center fs-5 text-uppercase">{{ product.name }}</h5>
+                                <div class="col-9">
+                                    <p class="card-text text-end text-underline">
+                                        {{ product.price|number_format(2, ',', ' ') }} €
+                                    </p>
+                                    <p class="card-text">
+                                        {% if product.stock != 0 %}
+                                        <span class="fs-5 text-success">En stock</span>
+                                        {% else %}
+                                        <span class="fs-5 text-danger">Rupture de stock</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-7">
+                                    <p class="fw-bold"> Nombre d'articles : <br> {{ product.stock }} restant(s)</p>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <a href="{{ path('cart_add', {'id': product.id} ) }}"
+                                        class="col-5 btn bg-black text-white btn-sm btn-{{ product.stock > 0 ? 'success' : 'danger disabled' }}">Ajouter</a>
+                                </div>
+                            </div>
                         </div>
-                        <h5 class="card-title col-7 text-center fs-5 text-uppercase">{{ product.name }}</h5>
-                        <div class="col-9">    
-                            <p class="card-text text-end text-underline"> 
-                                {{ product.price|number_format(2, ',', ' ') }} €
-                            </p>
-                            <p class="card-text">
-                                {% if product.stock != 0 %}
-                                <span class="fs-5 text-success">En stock</span>
-                                {% else %}
-                                <span class="fs-5 text-danger">Rupture de stock</span>
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-7">
-                            <p class="fw-bold"> Nombre d'articles : <br> {{ product.stock }} restant(s)</p>
-                        </div>
-                        <div class="col-5 text-end">
-                            <a href="{{ path('cart_add', {'id': product.id} ) }}" class="col-5 btn bg-black text-white btn-sm btn-{{ product.stock > 0 ? 'success' : 'danger disabled' }}">Ajouter</a>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-        {% endfor %}
-    </div>
-</div>
-    
+
 </main>
 {% endblock %}
