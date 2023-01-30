@@ -13,7 +13,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 rounded-top orange">
                 <table class="table table-hover align-middle">
                     <thead>
                         <tr>
@@ -23,7 +23,7 @@
                             <th>Sous-total</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="bg-light">
                         {% for element in cart %}
                             <tr>
                                 <td> {{ element.product.name }}
