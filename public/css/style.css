@@ -94,6 +94,7 @@ i:hover{
 
 .card{
     border-radius: 30px;
+    max-height:90%;
 }
 
 .category-name{
