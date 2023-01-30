@@ -14,11 +14,11 @@
             {% for category in categories %}
             <div class="col">
                 {% if loop.index == 1 %}
-                <div class="card overflow-scroll bg-warning bg-opacity-50">
+                <div class="card overflow-scroll overflow-x-hidden bg-warning bg-opacity-50">
                     {% elseif loop.index == 2 %}
-                    <div class="card overflow-scroll bg-primary bg-opacity-50">
+                    <div class="card overflow-scroll overflow-x-hidden  bg-primary bg-opacity-50">
                     {% elseif loop.index == 3 %}
-                    <div class="card overflow-scroll bg-danger bg-opacity-50">
+                    <div class="card overflow-scroll overflow-x-hidden bg-danger bg-opacity-50">
                         {% endif %}
                         <div class="category-name">
                             <h3 class="text-center "> {{ category.name }} </h3>
