@@ -14,9 +14,9 @@
             {% for category in categories %}
             <div class="col">
                 {% if loop.index == 1 %}
-                <div class="card bg-primary bg-opacity-50">
+                <div class="card bg-warning bg-opacity-50">
                     {% elseif loop.index == 2 %}
-                    <div class="card bg-warning bg-opacity-50">
+                    <div class="card bg-primary bg-opacity-50">
                     {% elseif loop.index == 3 %}
                     <div class="card bg-danger bg-opacity-50">
                         {% endif %}
