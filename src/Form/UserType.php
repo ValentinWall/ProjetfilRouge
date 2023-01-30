@@ -30,7 +30,6 @@ class UserType extends AbstractType
                 'mapped' => false,
                 'choices' => [
                     'utilisateur' => '',
-                    'administrateur' => 'ROLE_ADMIN',
                     'super administrateur' => 'ROLE_SUPER_ADMIN'
                 ]
             ])
